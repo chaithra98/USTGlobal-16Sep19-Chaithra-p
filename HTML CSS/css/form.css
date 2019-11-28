@@ -1,0 +1,51 @@
+h2{
+    /*color: aqua;
+    text-align: center*/
+}
+form{
+    /*background-color: rgb(136, 119, 119);*/
+    border: 1px solid black;
+    width: 350px;
+    height: 300px;
+    margin: 100px 0 0 450px; /* top right bottom left */
+    /*margin-top: 100px;
+    margin-left: 280px;*/
+    text-align: center;
+    font-size: 15px;
+    font-family: cursive;
+    border-radius: 30px;
+    border: 5px solid white;
+    background-image: url(images/iron3.jpg);
+    background-size: cover;
+    color: aliceblue;
+}
+body{
+    background-image: url(images/frozen.jpg);
+    background-size: cover;
+}
+input[type="text"], input[type="password"]{
+    width: 235px;
+    height: 25px;
+    border: 1px solid black;
+    border: 5px solid red;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 20px;
+    outline: none;
+}
+/* input[type="text"], input[type="password"]:focus{
+    /* outline: none; 
+} */
+input[type="submit"]{
+    margin-top: 10px;
+    padding: 5px;
+    border-radius: 100px;
+    background-color: rgba(25, 0, 255, 0.246);
+    outline: none;
+    color: white;
+}
+/*pseudo selector*/
+input[type="submit"]:hover{
+    background-color: green;
+
+}
