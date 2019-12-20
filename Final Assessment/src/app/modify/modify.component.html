@@ -1,0 +1,79 @@
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link" style="color: black;" routerLink="/add"><b>Add Product</b></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" style="color: black;" routerLink="/modify"><b>Modify Product</b></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" style="color: black;" routerLink="/getall"><b>Search Product</b></a>
+            </li>
+        </ul>
+    </div>
+</nav>  
+<div class="col-md-4 offset-md-4 mt-5 card">
+    <div class="card-header" style="background-color: cornflowerblue;">
+        <div class="card-title">
+        <h4>Modify Product</h4>
+        </div>
+    </div>
+    <div class="card-body" style="margin-bottom: 70px;">
+        <form action="" #form='ngForm' (ngSubmit)='modify(form)'>
+            <div class="form-group">
+                <input type="number" name="id" id="id" #id='ngModel' 
+                ngModel class="form-control mb-3" placeholder="Enter Product Id..." pattern="[\d]{1,3}$" title="id must contain positive number till 3digits" size="30" required>
+                <div *ngIf="id.touched && id.invalid">
+                    <p *ngIf="id.errors.required" class="text-danger">*id is required</p>
+                    <p class=" alert alert-danger" *ngIf="id.errors.pattern">id should contain only positive number till 3digits</p>
+                </div>
+            </div>
+            <div class="form-group">
+            <input type="text" name="name" id="name" #name='ngModel' pattern="[A-Za-z\s]{1,15}$"  title="it should be only alphabates with maxlength 15" size="40"
+                ngModel required class="form-control mb-3" size="4" placeholder="Enter Product Name...">
+                <div *ngIf="name.touched && name.invalid">
+                    <p *ngIf="name.errors.required" class="text-danger">*product name required</p>
+                    <p class=" alert alert-danger" *ngIf="name.errors.pattern">it should be only alphabates and maxlength 15</p>
+                </div>
+            </div>
+            <div class="form-group">
+            <input type="text" name="category" id="category" #category='ngModel' 
+                ngModel class="form-control mb-3" placeholder="Enter Category..."  pattern="[A-Za-z\s]{1,15}$" title="it should be only alphabates and maxlength 15" size="30" required>
+            <div *ngIf="category.touched && category.invalid">
+                <p *ngIf="category.errors.required" class="text-danger">*category must required</p>
+                <p class=" alert alert-danger" *ngIf="category.errors.pattern">it should be only alphabates and maxlength 15</p>
+            </div>
+            </div>
+            <div class="form-group">
+                <input type="text" name="company" id="company" #company='ngModel' 
+                    ngModel class="form-control mb-3" placeholder="Enter Company Name..."  pattern="[A-Za-z\s]{1,15}$" title="it should be only alphabates and maxlength 15" size="30" required>
+                <div *ngIf="company.touched && company.invalid">
+                    <p *ngIf="company.errors.required" class="text-danger">*company must required</p>
+                    <p class=" alert alert-danger" *ngIf="company.errors.pattern">it should be only alphabates and maxlength 15</p>
+                </div>
+            </div>
+            <div class="form-group">
+            <input type="number" name="quantity" id="quantity" #quantity='ngModel' 
+            ngModel class="form-control mb-3" placeholder="Enter Quantity..." pattern="[\d]{1,3}$" title="quantity should contain only positive number upto 3digits" size="30" required>
+            <div *ngIf="quantity.touched && quantity.invalid">
+                <p *ngIf="quantity.errors.required" class="text-danger">*quantity is required</p>
+                <p class=" alert alert-danger" *ngIf="quantity.errors.pattern">quantity should contain only positive number upto 3digits</p>
+            </div>
+            </div>
+            <div class="form-group">
+                <input type="number" name="price" id="price" #price='ngModel' 
+                ngModel class="form-control mb-3" placeholder="Enter Product Price..." pattern="[\d]{1,5}$" title="price should contain only positive number upto 5digits" maxlength="" size="30" required>
+                <div *ngIf="price.touched && price.invalid">
+                    <p *ngIf="price.errors.required" class="text-danger">*price is required</p>
+                    <p class=" alert alert-danger" *ngIf="price.errors.pattern">price should contain only positive number upto 5digits</p>
+                </div>
+            </div>
+                <button type="submit" class="btn btn-dark" [disabled]="modifyForm.invalid" >Register</button>
+        </form>
+    </div>
+</div>
