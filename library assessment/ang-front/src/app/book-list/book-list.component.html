@@ -1,0 +1,39 @@
+<input type="search" name="search" [(ngModel)]='search' placeholder="Enter name of book to search..."
+class="form-control col-md-4 offset-md-4 mb-3 mt-5">
+<div class="panel-body">
+    <table  class="table table-hover table-sm table-bordered" >
+    
+        <thead class="thead-light">
+            <tr>
+                <th scope="row">BOOK_ID</th>
+                <th scope="row">SID</th>
+                <th scope="row">BOOK_NAME</th>
+                <th scope="row">AUTHOR_NAME</th>
+                <th scope="row">PUBLISHER_NAME</th>
+                <th scope="row">ISSUE_DATE</th>
+                <th scope="row">END_DATE</th>
+                <th scope="row">ADD BOOK</th>
+                <th scope="row">REMOVE BOOK</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+             <tr *ngFor="let books of book | filter:search; index as i">
+                <td>{{books.book_id}}</td>
+                <td>{{books.sid}}</td>
+                <td>{{books.book_name}}</td>
+                <td>{{books.author_name}}</td>
+                <td>{{books.publisher_name}}</td>
+                <td>{{books.issue_date | date:'short'}}</td>
+                <td>{{books.end_date | date:'short'}}</td>
+            
+            <td>
+                <button type="button" routerLink="/add-book" class="btn btn-primary" >Add book</button>
+            </td>
+            <td>
+            <button (click)="deleteBook(books)" type="button" class="btn btn-primary">Remove book</button>
+    </td>
+    </tr>
+    </tbody>
+    </table>                   
+            

@@ -1,0 +1,32 @@
+<div class="alert alert-danger" *ngIf='error'></div>
+<form action="" class="col-md-4 offset-4 mt-5 card card-body" #form="ngForm"(ngSubmit)="update(form)">
+<h1 class="text-center bg-dark text-white">Update Student Details</h1>
+<div class="form-group">
+<input type="number" name="student_id" id="student_id" class="form-control" 
+  placeholder="enter student_id..." #student_id="ngModel" ngModel> 
+</div>
+    <div class="form-group">
+    <input type="text" name="fname" id="fname" class="form-control" 
+    placeholder="enter fname..." #fname="ngModel" ngModel> 
+   </div>
+    <div class="form-group">
+   <input type="text" name="lname" id="lname" class="form-control" 
+    placeholder="enter lname..." #lname="ngModel" ngModel>  
+    </div>
+    <div class="form-group">
+      <input type="text" name="gender" id="gender" class="form-control" 
+      placeholder="enter gender..." #gender="ngModel" ngModel>  
+  </div>
+  <div class="form-group">
+    <input type="email" name="email" id="email" class="form-control" 
+    placeholder="enter email..." #email="ngModel" ngModel>  
+</div>
+<div class="form-group">
+  <input type="phoneno" name="phoneno" id="phoneno" class="form-control" 
+  placeholder="enter phoneno..." #phoneno="ngModel" ngModel>  
+</div>
+<div class="form-group">
+<button type="submit" class="btn btn-outline-success float-right" >Update</button>
+</div>
+</form>
+
